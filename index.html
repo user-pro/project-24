@@ -391,24 +391,23 @@
          });
          let center = document.documentElement.clientHeight / 2 + window.pageYOffset;
             for (let i = 0; i < params.length; i++) {
-               let circle = numbers[i].querySelector('.progress-ring__circle');
-               let radius = circle.r.baseVal.value;
-               let circumference = radius * 2 * Math.PI;
+               let circle = numbers[i].querySelector('.progress-ring__circle'),
+                   radius = circle.r.baseVal.value,
+                   circumference = radius * 2 * Math.PI;
 
                circle.style.strokeDasharray = `${circumference} ${circumference}`;
                circle.style.strokeDashoffset = `${circumference }`;
 
-               function setProgress(percent, circlefer) {
-                  const offset = circlefer - percent / 100 * circlefer;
-                  circle.style.strokeDashoffset = offset ;
+               function setProgress(percent, c, circlref) {
+                  const offset = circlref - percent / 100 * circlref;
+                  c.style.strokeDashoffset = offset ;
                }
                if(center >= params[i].top && center <= params[i].height + params[i].top){
-                  setProgress((100 / params.length * (i + 1)), circumference);
+                  setProgress((100 / params.length * (i + 1)), circle, circumference);
                   numbers[i].classList.add('active');
-                  // circle.cssText = `transition: .35s`;
                } else {
                   numbers[i].classList.remove('active');
-                  setProgress(0, circumference);
+                  setProgress(0, circle, circumference);
                }
 
             }
