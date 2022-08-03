@@ -574,8 +574,7 @@ input:focus:-ms-input-placeholder {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 30px;
-  gap: 30px;
+ 
 }
 
 .header__link {
@@ -585,6 +584,7 @@ input:focus:-ms-input-placeholder {
   font-size: 16px;
   line-height: 19px;
   color: #FFFFFF;
+  margin-right: 30px;
 }
 
 .header__catalog {
@@ -2012,11 +2012,10 @@ body {
     margin-right: calc(10px + 10 * ((100vw - 320px) / 990));
   }
 
-  .header__list {
-    gap: calc(10px + 20 * ((100vw - 320px) / 990));
-  }
+
 
   .header__link {
+    margin-right: calc(10px + 20 * ((100vw - 320px) / 990));
     font-size: calc(14px + 2 * ((100vw - 320px) / 990));
   }
 
