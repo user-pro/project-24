@@ -398,17 +398,17 @@
                circle.style.strokeDasharray = `${circumference} ${circumference}`;
                circle.style.strokeDashoffset = `${circumference }`;
 
-               function setProgress(percent) {
-                  const offset = circumference - percent / 100 * circumference;
+               function setProgress(percent, circlefer) {
+                  const offset = circlefer - percent / 100 * circlefer;
                   circle.style.strokeDashoffset = offset ;
                }
                if(center >= params[i].top && center <= params[i].height + params[i].top){
-                  setProgress((100 / params.length * (i + 1)));
+                  setProgress((100 / params.length * (i + 1)), circumference);
                   numbers[i].classList.add('active');
                   // circle.cssText = `transition: .35s`;
                } else {
                   numbers[i].classList.remove('active');
-                  setProgress(0);
+                  setProgress(0, circumference);
                }
 
             }
