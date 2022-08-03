@@ -338,7 +338,6 @@
          </div>
    </section>
    <script>
-     console.log('mes to safsri');
          let body = document.querySelector('body');
          let numberOfSlides = document.querySelectorAll('.review').length;
          const reviewsSlider = new Swiper('.reviews-content', {
@@ -374,7 +373,7 @@
             reviewsBlock = document.querySelector('.reviews'),
             
          ];
-         
+         console.log(elems);
          let numbers = document.querySelectorAll('.aside-content__number'),
              numbersBlock = document.querySelector('.aside-content'),
              params = [],
@@ -433,6 +432,7 @@
                }        
             }
          addEventListener("scroll", ()=> {
+            console.log('scroll');
             for (let i = 0; i < numbersBottoms.length; i++) {
                if (mainBlock.getBoundingClientRect().top + 150 < numbersBottoms[i] && mainBlock.getBoundingClientRect().top + mainBlock.getBoundingClientRect().height - 150 > numbersBottoms[i]){
                   
